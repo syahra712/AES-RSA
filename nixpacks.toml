@@ -2,8 +2,15 @@
   name = "python"
 
 [phases.setup]
-  nixPkgs = ['python3', 'python3Packages.pip', 'gcc']
-  cmds = ['pip install -r requirements.txt']
+  nixPkgs = [
+    'python38',
+    'python38Packages.pip',
+    'python38Packages.cryptography',
+    'python38Packages.fastapi',
+    'python38Packages.uvicorn',
+    'python38Packages.pydantic',
+    'gcc'
+  ]
 
 [phases.build]
   cmds = []
