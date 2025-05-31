@@ -1,0 +1,12 @@
+[provider]
+  name = "python"
+
+[phases.setup]
+  nixPkgs = ['python3', 'python3Packages.pip', 'gcc']
+  cmds = ['pip install -r requirements.txt']
+
+[phases.build]
+  cmds = []
+
+[start]
+  cmd = "uvicorn main_improved:app --host 0.0.0.0 --port $PORT"
